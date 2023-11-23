@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\AtlasMed_GS.props" />
+</Project>
