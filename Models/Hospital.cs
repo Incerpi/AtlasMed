@@ -1,7 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AtlasMed_GS.Models
 {
+
+    [Table("TB_HOSPITAL")]
     public class Hospital
     {
         [Key]
@@ -11,7 +14,6 @@ namespace AtlasMed_GS.Models
         public string Nome { get; set; }
 
         [Required]
-        [Phone]
         public string Telefone { get; set; }
 
         [Required]

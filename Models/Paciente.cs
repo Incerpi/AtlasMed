@@ -24,7 +24,6 @@ namespace AtlasMed_GS.Models
         public string Email { get; set; }
 
         [Required]
-        [Phone]
         public string Telefone { get; set; }
 
         [Required]
