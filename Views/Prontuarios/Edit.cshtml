@@ -1,0 +1,117 @@
+﻿@model AtlasMed_GS.Models.Prontuario
+
+@{
+    ViewData["Title"] = "Editar Prontuário";
+}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - AtlasMed</title>
+
+    <!-- Google Fonts & Bootstrap -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f4f9fd;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .form-container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        h2 {
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-label {
+            font-weight: 500;
+        }
+
+        .btn-primary {
+            margin-top: 10px;
+        }
+
+        .back-link {
+            margin-top: 20px;
+            display: inline-block;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+            color: #777;
+        }
+    </style>
+    <script>
+    function mostrarMensagem() {
+        alert("Informações atualizadas com sucesso!");
+    }
+    </script>
+</head>
+<body>
+
+            <h2>Editar Paciente</h2>
+            <hr />
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="IdProntuario" />
+
+                <div class="form-group"></div>
+                    <label asp-for="IdPaciente" class="control-label">Paciente</label>
+                    <select asp-for="IdPaciente" class="form-control" asp-items="ViewBag.IdPaciente"></select>
+                    <span asp-validation-for="IdPaciente" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Sintomas" class="form-label">Sintomas</label>
+                    <input asp-for="Sintomas" class="form-control" />
+                    <span asp-validation-for="Sintomas" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="HorarioChegada" class="form-label">Horário de Chegada</del></label>
+                    <input asp-for="HorarioChegada" class="form-control" />
+                    <span asp-validation-for="HorarioChegada" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Alergias" class="form-label">Alergias</label>
+                    <input asp-for="Alergias" class="form-control" />
+                    <span asp-validation-for="Alergias" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="TipoSanguineo" class="form-label">Tipo Sanguíneo</label>
+                    <input asp-for="TipoSanguineo" class="form-control" />
+                    <span asp-validation-for="TipoSanguineo" class="text-danger"></span>
+                </div>
+
+                <button type="submit" class="btn btn-primary" onclick="mostrarMensagem()">Salvar</button>
+            </form>
+
+            <a class="back-link" asp-action="Index">← Voltar para a lista</a>
+
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }
+</body>
+</html>

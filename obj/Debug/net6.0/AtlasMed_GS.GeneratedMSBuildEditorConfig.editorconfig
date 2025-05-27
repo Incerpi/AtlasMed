@@ -1,0 +1,167 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetFrameworkIdentifier = .NETCoreApp
+build_property.TargetFrameworkVersion = v6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = AtlasMed_GS
+build_property.RootNamespace = AtlasMed_GS
+build_property.ProjectDir = C:\Users\tique\OneDrive\Área de Trabalho\PROGRAMAS\a\AtlasMed_GS\AtlasMed_GS\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\tique\OneDrive\Área de Trabalho\PROGRAMAS\a\AtlasMed_GS\AtlasMed_GS
+build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 6.0
+build_property.EnableCodeStyleSeverity = 
+
+[C:/Users/tique/OneDrive/Área de Trabalho/PROGRAMAS/a/AtlasMed_GS/AtlasMed_GS/Views/Consultas/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29uc3VsdGFzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tique/OneDrive/Área de Trabalho/PROGRAMAS/a/AtlasMed_GS/AtlasMed_GS/Views/Consultas/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29uc3VsdGFzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tique/OneDrive/Área de Trabalho/PROGRAMAS/a/AtlasMed_GS/AtlasMed_GS/Views/Consultas/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29uc3VsdGFzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tique/OneDrive/Área de Trabalho/PROGRAMAS/a/AtlasMed_GS/AtlasMed_GS/Views/Consultas/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29uc3VsdGFzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tique/OneDrive/Área de Trabalho/PROGRAMAS/a/AtlasMed_GS/AtlasMed_GS/Views/Consultas/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29uc3VsdGFzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tique/OneDrive/Área de Trabalho/PROGRAMAS/a/AtlasMed_GS/AtlasMed_GS/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tique/OneDrive/Área de Trabalho/PROGRAMAS/a/AtlasMed_GS/AtlasMed_GS/Views/Hospitais/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9zcGl0YWlzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tique/OneDrive/Área de Trabalho/PROGRAMAS/a/AtlasMed_GS/AtlasMed_GS/Views/Hospitais/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9zcGl0YWlzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tique/OneDrive/Área de Trabalho/PROGRAMAS/a/AtlasMed_GS/AtlasMed_GS/Views/Hospitais/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9zcGl0YWlzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tique/OneDrive/Área de Trabalho/PROGRAMAS/a/AtlasMed_GS/AtlasMed_GS/Views/Hospitais/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9zcGl0YWlzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tique/OneDrive/Área de Trabalho/PROGRAMAS/a/AtlasMed_GS/AtlasMed_GS/Views/Hospitais/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9zcGl0YWlzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tique/OneDrive/Área de Trabalho/PROGRAMAS/a/AtlasMed_GS/AtlasMed_GS/Views/Medicacoes/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVkaWNhY29lc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tique/OneDrive/Área de Trabalho/PROGRAMAS/a/AtlasMed_GS/AtlasMed_GS/Views/Medicacoes/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVkaWNhY29lc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tique/OneDrive/Área de Trabalho/PROGRAMAS/a/AtlasMed_GS/AtlasMed_GS/Views/Medicacoes/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVkaWNhY29lc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tique/OneDrive/Área de Trabalho/PROGRAMAS/a/AtlasMed_GS/AtlasMed_GS/Views/Medicacoes/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVkaWNhY29lc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tique/OneDrive/Área de Trabalho/PROGRAMAS/a/AtlasMed_GS/AtlasMed_GS/Views/Medicacoes/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVkaWNhY29lc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tique/OneDrive/Área de Trabalho/PROGRAMAS/a/AtlasMed_GS/AtlasMed_GS/Views/Medicos1/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVkaWNvczFcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tique/OneDrive/Área de Trabalho/PROGRAMAS/a/AtlasMed_GS/AtlasMed_GS/Views/Medicos1/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVkaWNvczFcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tique/OneDrive/Área de Trabalho/PROGRAMAS/a/AtlasMed_GS/AtlasMed_GS/Views/Medicos1/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVkaWNvczFcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tique/OneDrive/Área de Trabalho/PROGRAMAS/a/AtlasMed_GS/AtlasMed_GS/Views/Medicos1/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVkaWNvczFcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tique/OneDrive/Área de Trabalho/PROGRAMAS/a/AtlasMed_GS/AtlasMed_GS/Views/Medicos1/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVkaWNvczFcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tique/OneDrive/Área de Trabalho/PROGRAMAS/a/AtlasMed_GS/AtlasMed_GS/Views/Pacientes/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjaWVudGVzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tique/OneDrive/Área de Trabalho/PROGRAMAS/a/AtlasMed_GS/AtlasMed_GS/Views/Pacientes/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjaWVudGVzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tique/OneDrive/Área de Trabalho/PROGRAMAS/a/AtlasMed_GS/AtlasMed_GS/Views/Pacientes/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjaWVudGVzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tique/OneDrive/Área de Trabalho/PROGRAMAS/a/AtlasMed_GS/AtlasMed_GS/Views/Pacientes/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjaWVudGVzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tique/OneDrive/Área de Trabalho/PROGRAMAS/a/AtlasMed_GS/AtlasMed_GS/Views/Pacientes/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjaWVudGVzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tique/OneDrive/Área de Trabalho/PROGRAMAS/a/AtlasMed_GS/AtlasMed_GS/Views/Prontuarios/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvbnR1YXJpb3NcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tique/OneDrive/Área de Trabalho/PROGRAMAS/a/AtlasMed_GS/AtlasMed_GS/Views/Prontuarios/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvbnR1YXJpb3NcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tique/OneDrive/Área de Trabalho/PROGRAMAS/a/AtlasMed_GS/AtlasMed_GS/Views/Prontuarios/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvbnR1YXJpb3NcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tique/OneDrive/Área de Trabalho/PROGRAMAS/a/AtlasMed_GS/AtlasMed_GS/Views/Prontuarios/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvbnR1YXJpb3NcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tique/OneDrive/Área de Trabalho/PROGRAMAS/a/AtlasMed_GS/AtlasMed_GS/Views/Prontuarios/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvbnR1YXJpb3NcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tique/OneDrive/Área de Trabalho/PROGRAMAS/a/AtlasMed_GS/AtlasMed_GS/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tique/OneDrive/Área de Trabalho/PROGRAMAS/a/AtlasMed_GS/AtlasMed_GS/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tique/OneDrive/Área de Trabalho/PROGRAMAS/a/AtlasMed_GS/AtlasMed_GS/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tique/OneDrive/Área de Trabalho/PROGRAMAS/a/AtlasMed_GS/AtlasMed_GS/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/tique/OneDrive/Área de Trabalho/PROGRAMAS/a/AtlasMed_GS/AtlasMed_GS/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-ntyerzpsha

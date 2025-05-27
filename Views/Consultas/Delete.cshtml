@@ -1,0 +1,111 @@
+﻿@model AtlasMed_GS.Models.Consulta
+
+@{
+    ViewData["Title"] = "Excluir Consulta";
+}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - AtlasMed</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f4f9fd;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        table {
+            width: 100%;
+            background-color: #fff;
+            border-collapse: collapse;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 14px 18px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+            vertical-align: top;
+        }
+
+        th {
+            width: 30%;
+            background-color: #2980b9;
+            font-weight: 600;
+            color: white;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        h2 {
+            font-weight: 600;
+            margin-bottom: 25px;
+        }
+
+        .actions {
+            margin-top: 25px;
+        }
+
+        .actions input[type="submit"] {
+            background-color: #dc3545;
+            border: none;
+            padding: 10px 20px;
+            color: #fff;
+            border-radius: 6px;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        .actions a {
+            margin-left: 15px;
+            color: #0077c2;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .actions a:hover {
+            text-decoration: underline;
+        }
+    </style>
+
+    <script>
+        function confirmarExclusao() {
+            return confirm("Tem certeza que deseja excluir esta consulta? Esta ação é irreversível!");
+        }
+    </script>
+</head>
+<body>
+        <h2>Excluir Consulta</h2>
+        <hr />
+
+        <table>
+            <tr><th>Paciente:</th><td>@Html.DisplayFor(model => model.Paciente.Nome)</td></tr>
+            <tr><th>Hospital:</th><td>@Html.DisplayFor(model => model.Hospital.Nome)</td></tr>
+            <tr><th>Sintomas:</th><td>@Html.DisplayFor(model => model.Prontuario.Sintomas)</td></tr>
+            <tr><th>Médico:</th><td>@Html.DisplayFor(model => model.Medico.Nome)</td></tr>
+            <tr><th>Horário da Consulta:</th><td>@Html.DisplayFor(model => model.HorarioConsulta)</td></tr>
+
+        </table>
+
+        <form asp-action="Delete" onsubmit="return confirmarExclusao()" class="actions">
+            <input type="hidden" asp-for="IdConsulta" />
+            <input type="submit" value="Excluir" />
+            <a asp-action="Index">Voltar</a>
+        </form>
+
+        <br>
+</body>
+</html>

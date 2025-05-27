@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - AtlasMed</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap e CSS do projeto -->
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f4f9fd;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            background-color: #0077c2;
+        }
+
+        .navbar-brand, .nav-link {
+            color: #fff !important;
+            font-weight: 500;
+        }
+
+        .navbar-brand:hover, .nav-link:hover {
+            color: #e0f0ff !important;
+        }
+
+        .container main {
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 30px;
+            margin-top: 10px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">AtlasMed</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Pacientes" asp-action="Index">Pacientes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Medicos1" asp-action="Index">Médicos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Hospitais" asp-action="Index">Hospitais</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Medicacoes" asp-action="Index">Medicações</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Prontuarios" asp-action="Index">Prontuários</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Consultas" asp-action="Index">Consultas</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer>
+        © @DateTime.Now.Year - AtlasMed. Todos os direitos reservados.
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

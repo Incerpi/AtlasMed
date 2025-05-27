@@ -1,0 +1,96 @@
+﻿@model AtlasMed_GS.Models.Medico
+
+@{
+    ViewData["Title"] = "Detalhes do Médico";
+}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - AtlasMed</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f4f9fd;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        table {
+            width: 100%;
+            background-color: #fff;
+            border-collapse: collapse;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 14px 18px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+            vertical-align: top;
+        }
+
+        th {
+            width: 30%;
+            background-color: #2980b9;
+            font-weight: 600;
+            color: white;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        h2 {
+            font-weight: 600;
+            margin-bottom: 25px;
+        }
+
+        .actions {
+            margin-top: 25px;
+        }
+
+        .actions a {
+            margin-right: 20px;
+            color: #0077c2;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .actions a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    
+        <h2>Detalhes do Médico</h2>
+        <hr/>
+    
+
+        <table>
+            <tr><th>Nome:</th><td>@Html.DisplayFor(model => model.Nome)</td></tr>
+            <tr><th>CPF:</th><td>@Model.Cpf.Insert(3, ".").Insert(7, ".").Insert(11, "-")</td></tr>
+            <tr><th>CRM:</th><td>@($"{Model.UfCrm} {Model.Crm}")</td></tr>
+            <tr><th>Especialidade:</th><td>@Html.DisplayFor(model => model.Especialidade)</td></tr>
+            <tr><th>Hospital:</th><td>@Html.DisplayFor(model => model.Hospital.Nome)</td></tr>
+        </table>
+
+        <div class="actions">
+            <a asp-action="Edit" asp-route-id="@Model?.IdMedico">Editar</a>
+            <a asp-action="Delete" asp-route-id="@Model?.IdMedico">Excluir</a>
+            <a asp-action="Index">Voltar</a>
+        </div>
+
+        <br>
+</body>
+</html>
