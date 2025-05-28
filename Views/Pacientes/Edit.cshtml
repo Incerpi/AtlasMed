@@ -1,0 +1,203 @@
+﻿@model AtlasMed_GS.Models.Paciente
+
+@{
+    ViewData["Title"] = "Editar Paciente";
+}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - AtlasMed</title>
+
+    <!-- Google Fonts & Bootstrap -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f4f9fd;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .form-container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        h2 {
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-label {
+            font-weight: 500;
+        }
+
+        .btn-primary {
+            margin-top: 10px;
+        }
+
+        .back-link {
+            margin-top: 20px;
+            display: inline-block;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+            color: #777;
+        }
+    </style>
+    <script>
+    function mostrarMensagem() {
+        alert("Informações atualizadas com sucesso!");
+    }
+    </script>
+</head>
+<body>
+
+            <h2>Editar Paciente</h2>
+            <hr />
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="IdPaciente" />
+
+                <div class="form-group">
+                    <label asp-for="Nome" class="form-label">Nome</label>
+                    <input asp-for="Nome" class="form-control" />
+                    <span asp-validation-for="Nome" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Cpf" class="form-label">CPF</label>
+                    <input asp-for="Cpf" class="form-control" />
+                    <span asp-validation-for="Cpf" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="DataNascimento" class="form-label">Data de Nascimento</label>
+                    <input asp-for="DataNascimento" class="form-control" />
+                    <span asp-validation-for="DataNascimento" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Email" class="form-label">Email</label>
+                    <input asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Telefone" class="form-label">Telefone</label>
+                    <input asp-for="Telefone" class="form-control" />
+                    <span asp-validation-for="Telefone" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Cep" class="form-label">CEP</label>
+                    <input asp-for="Cep" class="form-control" />
+                    <span asp-validation-for="Cep" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Endereco" class="form-label">Endereço</label>
+                    <input asp-for="Endereco" class="form-control" />
+                    <span asp-validation-for="Endereco" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Numero" class="form-label">Número</label>
+                    <input asp-for="Numero" class="form-control" />
+                    <span asp-validation-for="Numero" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Bairro" class="form-label">Bairro</label>
+                    <input asp-for="Bairro" class="form-control" />
+                    <span asp-validation-for="Bairro" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Cidade" class="form-label">Cidade</label>
+                    <input asp-for="Cidade" class="form-control" />
+                    <span asp-validation-for="Cidade" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Estado" class="form-label">Estado</label>
+                    <input asp-for="Estado" class="form-control" />
+                    <span asp-validation-for="Estado" class="text-danger"></span>
+                </div>
+
+
+                <button type="submit" class="btn btn-primary" onclick="mostrarMensagem()">Salvar</button>
+            </form>
+
+            <a class="back-link" asp-action="Index">← Voltar para a lista</a>
+
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        const cepInput = document.getElementById("Cep");
+
+        if (!cepInput) return;
+
+        cepInput.addEventListener("blur", function () {
+            const cep = this.value.replace(/\D/g, "");
+
+            if (cep.length !== 8) {
+                lert("CEP inválido. Digite 8 números.");
+                return;
+            }
+
+            fetch(`https://viacep.com.br/ws/${cep}/json/`)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error("Resposta inválida da API");
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    if (data.erro) {
+                        alert("CEP não encontrado.");
+                        return;
+                    }
+
+                    // Preenche os campos com os dados retornados
+        document.getElementById("Endereco").value = data.logradouro || '';
+        document.getElementById("Bairro").value = data.bairro || '';
+        document.getElementById("Cidade").value = data.localidade || '';
+        document.getElementById("Estado").value = data.uf || '';
+            })
+            .catch(error => {
+                console.error("Erro ao buscar CEP:", error);
+                alert("Erro ao buscar o CEP. Verifique a conexão ou o CEP digitado.");
+            });
+    });
+});
+
+    document.addEventListener('input', function (e) {
+    if (['cpf', 'telefone', 'cep'].includes(e.target.id)) {
+        e.target.value = e.target.value.replace(/\D/g, '');
+    }
+});
+    </script>
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.12/jquery.validate.unobtrusive.min.js"></script>
+    }
+</body>
+</html>

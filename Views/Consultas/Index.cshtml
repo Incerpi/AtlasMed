@@ -1,0 +1,223 @@
+﻿@model IEnumerable<AtlasMed_GS.Models.Consulta>
+
+@{
+    ViewData["Title"] = "Consultas";
+}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - AtlasMed</title>
+
+    <!-- Fonte e Bootstrap -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f4f9fd;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .content-box {
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        h2 {
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"] {
+            margin-bottom: 20px;
+            padding: 8px 12px;
+            width: 100%;
+            max-width: 400px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 90%;
+            margin: 0 auto 40px auto;
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 0 8px rgba(0,0,0,0.1);
+            table-layout: auto;
+        }
+
+
+        table th, table td {
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+            vertical-align: middle;
+        }
+
+        table tbody tr {
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        table tbody tr:hover {
+            background-color: #f0f8ff;
+        }
+
+        table thead tr {
+            background-color: #2980b9;
+            color: white;
+            cursor: default;  /* não clicável */
+        }
+
+        tbody tr {
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        tbody tr:hover {
+            background-color: #d6eaf8;
+        }
+
+        tbody td {
+            padding: 8px 12px;
+            border-bottom: 1px solid #ddd;
+            white-space: nowrap;  /* Evita quebra de linha nas células */
+        }
+
+        thead tr {
+            background-color: #2980b9;
+            color: white;
+            cursor: default;
+        }
+
+        thead th {
+            padding: 10px 12px;
+            text-align: center;
+            user-select: none;
+            white-space: nowrap;  /* Não quebra texto no cabeçalho */
+        }
+
+        td, th {
+            padding: 10px;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        td a {
+            color: #0077c2;
+            margin: 0 8px;
+            text-decoration: none;
+        }
+
+        td a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+            color: #777;
+        }
+    </style>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+    let linhasOriginais = [];
+
+    function ordenarTabela(linhas) {
+        return linhas.sort(function (a, b) {
+            const nomeA = $(a).find('td:eq(0)').text().toLowerCase().trim();
+            const nomeB = $(b).find('td:eq(0)').text().toLowerCase().trim();
+            return nomeA.localeCompare(nomeB);
+        });
+    }
+
+    $(document).ready(function () {
+        // Salva cópia das linhas originais
+        linhasOriginais = $('tbody tr').get();
+
+        // Ordena e exibe os dados ao carregar
+        $('tbody').empty().append(ordenarTabela([...linhasOriginais]));
+
+        $('#filtroNome').on('input', function () {
+            const filtro = $(this).val().toLowerCase();
+
+            if (filtro === '') {
+                // Restaurar tabela original ordenada
+                $('tbody').empty().append(ordenarTabela([...linhasOriginais]));
+                return;
+            }
+
+            // Filtra as linhas que começam com o texto digitado
+            const linhasFiltradas = linhasOriginais.filter(function (row) {
+                const nome = $(row).find('td:eq(0)').text().toLowerCase().trim();
+                return nome.startsWith(filtro);
+            });
+
+            // Ordena e exibe os resultados filtrados
+            $('tbody').empty().append(ordenarTabela(linhasFiltradas));
+        });
+    });
+</script>
+</head>
+<body>
+            <h2>Lista de Consultas</h2>
+            <hr />
+
+            <input type="text" id="filtroNome" placeholder="Filtrar por nome" />
+
+            <p>
+                <a class="btn btn-primary" asp-action="Create">Cadastrar Consulta</a>
+            </p>
+
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>Paciente</th>
+                            <th>CPF</th>
+                            <th>Médico</th>
+                            <th>CRM</th>
+                            <th>Hospital</th>
+                            <th>Sintomas</th>
+                            <th>Alergias</th>
+                            <th>Tipo Sanguíneo</th>
+                            <th>Medicação</th>
+                            <th>Horário de Chegada</th>
+                            <th>Horário da Consulta</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr onclick="window.location.href='@Url.Action("Details", "Consultas", new { id = item.IdConsulta })'" style="cursor: pointer;">
+                                <td>@Html.DisplayFor(modelItem => item.Paciente.Nome)</td>
+                                <td>@item.Paciente.Cpf.Insert(3, ".").Insert(7, ".").Insert(11, "-")</td>
+                                <td>@Html.DisplayFor(modelItem => item.Medico.Nome)</td>
+                                <td>@($"{item.Medico.UfCrm} {item.Medico.Crm}")</td>
+                                <td>@Html.DisplayFor(modelItem => item.Hospital.Nome)</td>
+                                <td>@Html.DisplayFor(modelItem => item.Prontuario.Sintomas)</td>
+                                <td>@Html.DisplayFor(modelItem => item.Prontuario.Alergias)</td>
+                                <td>@Html.DisplayFor(modelItem => item.Prontuario.TipoSanguineo)</td>
+                                <td>@Html.DisplayFor(modelItem => item.Medicacao.Nome)</td>
+                                <td>@Html.DisplayFor(modelItem => item.Prontuario.HorarioChegada)</td>
+                                <td>@Html.DisplayFor(modelItem => item.HorarioConsulta)</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
