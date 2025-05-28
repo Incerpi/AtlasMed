@@ -60,7 +60,6 @@ namespace AtlasMed_GS.Controllers
         public async Task<IActionResult> Create([Bind("Sintomas,HorarioChegada,Alergias,TipoSanguineo,IdPaciente")] Prontuario prontuario)
         {
 
-            ModelState.Remove("Medicacao");
             ModelState.Remove("Paciente");
 
             if (ModelState.IsValid)
@@ -87,7 +86,7 @@ namespace AtlasMed_GS.Controllers
             {
                 return NotFound();
             }
-            ViewData["IdPaciente"] = new SelectList(_context.Paciente, "IdPaciente", "Nome", prontuario.IdPaciente);
+            ViewBag.IdPaciente = new SelectList(_context.Paciente, "IdPaciente", "Nome", prontuario.IdPaciente);
 
             return View(prontuario);
         }
@@ -103,6 +102,9 @@ namespace AtlasMed_GS.Controllers
             {
                 return NotFound();
             }
+
+            ModelState.Remove("Paciente");
+
 
             if (ModelState.IsValid)
             {
@@ -124,7 +126,7 @@ namespace AtlasMed_GS.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdPaciente"] = new SelectList(_context.Paciente, "IdPaciente", "Nome", prontuario.IdPaciente);
+            ViewBag.IdPaciente = new SelectList(_context.Paciente, "IdPaciente", "Nome", prontuario.IdPaciente);
             return View(prontuario);
         }
 

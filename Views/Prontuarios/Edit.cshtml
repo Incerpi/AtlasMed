@@ -68,13 +68,13 @@
 </head>
 <body>
 
-            <h2>Editar Paciente</h2>
+            <h2>Editar Prontuário</h2>
             <hr />
             <form asp-action="Edit">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <input type="hidden" asp-for="IdProntuario" />
 
-                <div class="form-group"></div>
+                <div class="form-group">
                     <label asp-for="IdPaciente" class="control-label">Paciente</label>
                     <select asp-for="IdPaciente" class="form-control" asp-items="ViewBag.IdPaciente"></select>
                     <span asp-validation-for="IdPaciente" class="text-danger"></span>
@@ -87,7 +87,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label asp-for="HorarioChegada" class="form-label">Horário de Chegada</del></label>
+                    <label asp-for="HorarioChegada" class="form-label">Horário de Chegada</label>
                     <input asp-for="HorarioChegada" class="form-control" />
                     <span asp-validation-for="HorarioChegada" class="text-danger"></span>
                 </div>
@@ -99,8 +99,18 @@
                 </div>
 
                 <div class="form-group">
-                    <label asp-for="TipoSanguineo" class="form-label">Tipo Sanguíneo</label>
-                    <input asp-for="TipoSanguineo" class="form-control" />
+                    <label for="TipoSanguineo" class="form-label">Tipo Sanguíneo</label>
+                    <select asp-for="TipoSanguineo" class="form-control" required>
+                        <option value="">Selecione um Tipo Sanguíneo</option>
+                        <option value="A+">A+</option>
+                        <option value="A-">A-</option>
+                        <option value="B+">B+</option>
+                        <option value="B-">B-</option>
+                        <option value="AB+">AB+</option>
+                        <option value="AB-">AB-</option>
+                        <option value="O+">O+</option>
+                        <option value="O-">O-</option>
+                    </select>
                     <span asp-validation-for="TipoSanguineo" class="text-danger"></span>
                 </div>
 

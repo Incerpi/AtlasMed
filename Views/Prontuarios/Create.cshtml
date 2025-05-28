@@ -96,8 +96,18 @@
                     <span asp-validation-for="Alergias" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="TipoSanguineo" class="form-label">Tipo Sanguíneo</label>
-                    <input asp-for="TipoSanguineo" class="form-control" />
+                    <label for="TipoSanguineo" class="form-label">Tipo Sanguíneo</label>
+                    <select asp-for="TipoSanguineo" class="form-control" required>
+                        <option value="">Selecione um Tipo Sanguíneo</option>
+                        <option value="A+">A+</option>
+                        <option value="A-">A-</option>
+                        <option value="B+">B+</option>
+                        <option value="B-">B-</option>
+                        <option value="AB+">AB+</option>
+                        <option value="AB-">AB-</option>
+                        <option value="O+">O+</option>
+                        <option value="O-">O-</option>
+                    </select>
                     <span asp-validation-for="TipoSanguineo" class="text-danger"></span>
                 </div>
 
@@ -107,7 +117,7 @@
 
             <a class="back-link" asp-action="Index">← Voltar para a lista</a>
 
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>--
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     @section Scripts {
         @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
     }

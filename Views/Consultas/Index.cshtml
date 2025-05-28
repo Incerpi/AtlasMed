@@ -202,9 +202,9 @@
                         {
                             <tr onclick="window.location.href='@Url.Action("Details", "Consultas", new { id = item.IdConsulta })'" style="cursor: pointer;">
                                 <td>@Html.DisplayFor(modelItem => item.Paciente.Nome)</td>
-                                <td>@Html.DisplayFor(modelItem => item.Paciente.Cpf)</td>
+                                <td>@item.Paciente.Cpf.Insert(3, ".").Insert(7, ".").Insert(11, "-")</td>
                                 <td>@Html.DisplayFor(modelItem => item.Medico.Nome)</td>
-                                <td>@Html.DisplayFor(modelItem => item.Medico.Crm)</td>
+                                <td>@($"{item.Medico.UfCrm} {item.Medico.Crm}")</td>
                                 <td>@Html.DisplayFor(modelItem => item.Hospital.Nome)</td>
                                 <td>@Html.DisplayFor(modelItem => item.Prontuario.Sintomas)</td>
                                 <td>@Html.DisplayFor(modelItem => item.Prontuario.Alergias)</td>

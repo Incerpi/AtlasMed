@@ -6092,11 +6092,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\tique\\OneDrive\\Área de Trabalho\\PROGRAMAS\\AtlasMed-2\\AtlasMed_GS.csproj",
+      "projectUniqueName": "C:\\Users\\tique\\OneDrive\\Área de Trabalho\\PROGRAMAS\\AtlasMed_GS-1\\AtlasMed_GS.csproj",
       "projectName": "AtlasMed_GS",
-      "projectPath": "C:\\Users\\tique\\OneDrive\\Área de Trabalho\\PROGRAMAS\\AtlasMed-2\\AtlasMed_GS.csproj",
+      "projectPath": "C:\\Users\\tique\\OneDrive\\Área de Trabalho\\PROGRAMAS\\AtlasMed_GS-1\\AtlasMed_GS.csproj",
       "packagesPath": "C:\\Users\\tique\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\tique\\OneDrive\\Área de Trabalho\\PROGRAMAS\\AtlasMed-2\\obj\\",
+      "outputPath": "C:\\Users\\tique\\OneDrive\\Área de Trabalho\\PROGRAMAS\\AtlasMed_GS-1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\tique\\AppData\\Roaming\\NuGet\\NuGet.Config"

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "I87rYHNeZBA=",
+  "dgSpecHash": "9u0S9x+2lxA=",
   "success": true,
-  "projectFilePath": "C:\\Users\\tique\\OneDrive\\Área de Trabalho\\PROGRAMAS\\AtlasMed-2\\AtlasMed_GS.csproj",
+  "projectFilePath": "C:\\Users\\tique\\OneDrive\\Área de Trabalho\\PROGRAMAS\\AtlasMed_GS-1\\AtlasMed_GS.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\tique\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\tique\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
