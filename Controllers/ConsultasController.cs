@@ -52,22 +52,32 @@ namespace AtlasMed_GS.Controllers
         // GET: Consultas/Create
         public IActionResult Create()
         {
-            ViewData["IdHospital"] = new SelectList(_context.Hospital, "IdHospital", "Nome");
-            ViewData["IdMedico"] = new SelectList(_context.Medico, "IdMedico", "Nome");
-            ViewData["IdMedico"] = new SelectList(_context.Medico, "IdMedico", "Crm");
-            ViewData["IdPaciente"] = new SelectList(_context.Paciente, "IdPaciente", "Nome");
-            ViewData["IdPaciente"] = new SelectList(_context.Paciente, "IdPaciente", "Cpf");
-            ViewData["IdProntuario"] = new SelectList(_context.Prontuario, "IdProntuario", "Sintomas");
-            ViewData["IdProntuario"] = new SelectList(_context.Prontuario, "IdProntuario", "Alergias");
-            ViewData["IdProntuario"] = new SelectList(_context.Prontuario, "IdProntuario", "TipoSanguineo");
-            ViewData["IdProntuario"] = new SelectList(_context.Prontuario, "IdProntuario", "HorarioChegada");
-            ViewData["IdMedicacao"] = new SelectList(_context.Medicacao, "IdMedicacao", "Nome");
+            // Pacientes
+            var pacientes = _context.Paciente.ToList();
+            ViewBag.NomePaciente = new SelectList(pacientes, "IdPaciente", "Nome");
+            ViewBag.CpfPaciente = new SelectList(pacientes, "IdPaciente", "Cpf");
+
+            // Médicos
+            var medicos = _context.Medico.ToList();
+            ViewBag.NomeMedico = new SelectList(medicos, "IdMedico", "Nome");
+            ViewBag.CrmMedico = new SelectList(medicos, "IdMedico", "Crm");
+
+            // Prontuários
+            var prontuarios = _context.Prontuario.ToList();
+            ViewBag.SintomasProntuario = new SelectList(prontuarios, "IdProntuario", "Sintomas");
+            ViewBag.AlergiasProntuario = new SelectList(prontuarios, "IdProntuario", "Alergias");
+            ViewBag.TipoSanguineo = new SelectList(prontuarios, "IdProntuario", "TipoSanguineo");
+            ViewBag.HorarioProntuario = new SelectList(prontuarios, "IdProntuario", "HorarioChegada");
+
+            // Medicações
+            ViewBag.Medicacao = new SelectList(_context.Medicacao, "IdMedicacao", "Nome");
+
+            // Hospitais
+            ViewBag.Hospital = new SelectList(_context.Hospital, "IdHospital", "Nome");
+
             return View();
         }
 
-        // POST: Consultas/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("IdConsulta,IdPaciente,IdMedico,IdProntuario,IdHospital,IdMedicacao,HorarioConsulta,Diagnostico")] Consulta consulta)
@@ -78,16 +88,25 @@ namespace AtlasMed_GS.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdHospital"] = new SelectList(_context.Hospital, "IdHospital", "Nome", consulta.IdHospital);
-            ViewData["IdMedico"] = new SelectList(_context.Medico, "IdMedico", "Nome", consulta.IdMedico);
-            ViewData["IdMedico"] = new SelectList(_context.Medico, "IdMedico", "Crm", consulta.IdMedico);
-            ViewData["IdPaciente"] = new SelectList(_context.Paciente, "IdPaciente", "Nome", consulta.IdPaciente);
-            ViewData["IdPaciente"] = new SelectList(_context.Paciente, "IdPaciente", "Cpf", consulta.IdPaciente);
-            ViewData["IdProntuario"] = new SelectList(_context.Prontuario, "IdProntuario", "Sintomas", consulta.IdProntuario);
-            ViewData["IdProntuario"] = new SelectList(_context.Prontuario, "IdProntuario", "Alergias", consulta.IdProntuario);
-            ViewData["IdProntuario"] = new SelectList(_context.Prontuario, "IdProntuario", "TipoSanguineo", consulta.IdProntuario);
-            ViewData["IdProntuario"] = new SelectList(_context.Prontuario, "IdProntuario", "HorarioChegada", consulta.IdProntuario);
-            ViewData["IdMedicacao"] = new SelectList(_context.Medicacao, "IdMedicacao", "Nome", consulta.IdMedicacao);
+
+            // Recarregar ViewBags em caso de erro de validação
+            var pacientes = _context.Paciente.ToList();
+            ViewBag.NomePaciente = new SelectList(pacientes, "IdPaciente", "Nome", consulta.IdPaciente);
+            ViewBag.CpfPaciente = new SelectList(pacientes, "IdPaciente", "Cpf", consulta.IdPaciente);
+
+            var medicos = _context.Medico.ToList();
+            ViewBag.NomeMedico = new SelectList(medicos, "IdMedico", "Nome", consulta.IdMedico);
+            ViewBag.CrmMedico = new SelectList(medicos, "IdMedico", "Crm", consulta.IdMedico);
+
+            var prontuarios = _context.Prontuario.ToList();
+            ViewBag.SintomasProntuario = new SelectList(prontuarios, "IdProntuario", "Sintomas", consulta.IdProntuario);
+            ViewBag.AlergiasProntuario = new SelectList(prontuarios, "IdProntuario", "Alergias", consulta.IdProntuario);
+            ViewBag.TipoSanguineo = new SelectList(prontuarios, "IdProntuario", "TipoSanguineo", consulta.IdProntuario);
+            ViewBag.HorarioProntuario = new SelectList(prontuarios, "IdProntuario", "HorarioChegada", consulta.IdProntuario);
+
+            ViewBag.Medicacao = new SelectList(_context.Medicacao, "IdMedicacao", "Nome", consulta.IdMedicacao);
+            ViewBag.Hospital = new SelectList(_context.Hospital, "IdHospital", "Nome", consulta.IdHospital);
+
             return View(consulta);
         }
 
@@ -199,14 +218,14 @@ namespace AtlasMed_GS.Controllers
             {
                 _context.Consulta.Remove(consulta);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool ConsultaExists(int id)
         {
-          return (_context.Consulta?.Any(e => e.IdConsulta == id)).GetValueOrDefault();
+            return (_context.Consulta?.Any(e => e.IdConsulta == id)).GetValueOrDefault();
         }
     }
 }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\tique\\OneDrive\\Área de Trabalho\\PROGRAMAS\\a\\AtlasMed_GS\\AtlasMed_GS\\AtlasMed_GS.csproj": {}
+    "C:\\Users\\tique\\OneDrive\\Área de Trabalho\\PROGRAMAS\\AtlasMed-2\\AtlasMed_GS.csproj": {}
   },
   "projects": {
-    "C:\\Users\\tique\\OneDrive\\Área de Trabalho\\PROGRAMAS\\a\\AtlasMed_GS\\AtlasMed_GS\\AtlasMed_GS.csproj": {
+    "C:\\Users\\tique\\OneDrive\\Área de Trabalho\\PROGRAMAS\\AtlasMed-2\\AtlasMed_GS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tique\\OneDrive\\Área de Trabalho\\PROGRAMAS\\a\\AtlasMed_GS\\AtlasMed_GS\\AtlasMed_GS.csproj",
+        "projectUniqueName": "C:\\Users\\tique\\OneDrive\\Área de Trabalho\\PROGRAMAS\\AtlasMed-2\\AtlasMed_GS.csproj",
         "projectName": "AtlasMed_GS",
-        "projectPath": "C:\\Users\\tique\\OneDrive\\Área de Trabalho\\PROGRAMAS\\a\\AtlasMed_GS\\AtlasMed_GS\\AtlasMed_GS.csproj",
+        "projectPath": "C:\\Users\\tique\\OneDrive\\Área de Trabalho\\PROGRAMAS\\AtlasMed-2\\AtlasMed_GS.csproj",
         "packagesPath": "C:\\Users\\tique\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tique\\OneDrive\\Área de Trabalho\\PROGRAMAS\\a\\AtlasMed_GS\\AtlasMed_GS\\obj\\",
+        "outputPath": "C:\\Users\\tique\\OneDrive\\Área de Trabalho\\PROGRAMAS\\AtlasMed-2\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\tique\\AppData\\Roaming\\NuGet\\NuGet.Config"

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AtlasMed_GS")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c2ac4e08b678c9f701c229f74308bc5240860408")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+de4642e08fbdb7ed6d6f327ea66e759072e7efc8")]
 [assembly: System.Reflection.AssemblyProductAttribute("AtlasMed_GS")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AtlasMed_GS")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
